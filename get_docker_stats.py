@@ -22,10 +22,12 @@ def parse_stats(lst = get_stats_source()):
         elif '%' in i and cpu_i == 1:
             mem = i
     container_id = src[0]
-    dct = {'container_id' : container_id, 'cpu' : cpu[:-1], 'memory' : mem[:-1]}
+    dct = {'id' : container_id, 'cpu' : cpu[:-1], 'memory' : mem[:-1]}
     #print(container_id, cpu[:-1], mem[:-1])
     return dct
 
-stats = parse_stats()
 
-print(stats[args[1]])
+stats = parse_stats()
+if len(args) > 1:
+    print(stats[args[1]])
+else: print(stats)
