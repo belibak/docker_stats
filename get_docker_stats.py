@@ -10,7 +10,7 @@ def get_stats_source():
     return out[1:]
 
 def parse_stats(lst = get_stats_source()):
-    print('len - %s' %(len(lst)) )
+    print('len - %s' %(len(lst)), lst )
     #lst = ['66315a9e0        0.17%               13.65 MB / 4.147 GB   0.33%               20.42 MB / 76.06 MB   9.6 MB / 430.1 kB     0']
     src = lst[0].split(' ')
     cpu_i = 0
