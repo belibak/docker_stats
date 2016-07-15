@@ -8,7 +8,7 @@ def get_stats_source():
     cmd = ['/usr/bin/docker', 'stats', '--no-stream']
     s = subprocess.Popen(cmd, stdout=subprocess.PIPE)
     out = s.communicate()
-    out = out.split('\n')
+    out = out[0].split('\n')
     return out[1:]
 
 def parse_stats(lst = get_stats_source()):
